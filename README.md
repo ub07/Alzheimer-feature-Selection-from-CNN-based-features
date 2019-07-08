@@ -9,3 +9,13 @@ Feature Selection Model was Based on <br/>
 " Selecting Useful Groups of Features in a Connectionist Framework " Debrup Chakraborty and Nikhil R. Pal, Fellow, IEEE
 
 
+## Processes to follow
+1. Download ADNI1 dataset.
+2. Preprocess them using Preprocess.py
+3. Remove Brain Degradation due to Age.
+4. Create 151 Patches required for CNN.
+5. Generate 1024 features from each patch.
+6. Use the 1024*151 features in Feature Selection Model.
+7. Check the accuracy in Extreme Learning Machine(RBF) Classifier
+
+
