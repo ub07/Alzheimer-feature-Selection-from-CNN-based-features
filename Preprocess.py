@@ -1,13 +1,20 @@
-
-
-
-
-
-
-
-
-
-
+!pip install dipy
+!pip install nibabel
+!pip install deepbrain
+import glob
+import nibabel as nib
+from deepbrain import Extractor
+import os
+import numpy as np
+np.set_printoptions(precision=4, suppress=True)
+import matplotlib.pyplot as plt
+from dipy.align.imwarp import SymmetricDiffeomorphicRegistration
+from dipy.align.imwarp import DiffeomorphicMap
+from dipy.align.metrics import CCMetric
+from dipy.viz import regtools
+from dipy.align.imaffine import (AffineMap,MutualInformationMetric,AffineRegistration)
+from dipy.align.transforms import (TranslationTransform3D,RigidTransform3D,AffineTransform3D)
+import pandas as pd
 
 #Read Image
 template_img = nib.load("MNI152_T1_1mm_Brain.nii.gz")
@@ -17,7 +24,7 @@ NIFTI_list = glob.glob("Images/*")
 NIFTI_list.sort()
 
 
-#Image Registration and Brain Extraction
+#Image Registration and Brain Extraction and normalization
 for img in NIFTI_list:
   moving_img = nib.load(img)
   #Extract Brain
