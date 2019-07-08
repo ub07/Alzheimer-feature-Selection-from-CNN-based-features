@@ -22,14 +22,14 @@ for sub in CN_Sub:
   img_list.append(img)
   
 #Concated Array
-img_data = np.empty([228,180,218,182])
+img_data = np.empty([228,182,218,182])
 for i in range(0,228):
   img = nib.load(img_list[i][0]).get_data()
   img_data[i,:,:,:] = img[:,:,:]
   
 #Fitting Model  
-w = np.empty([180,218,182])
-for x in range(0,180):
+w = np.empty([182,218,182])
+for x in range(0,182):
   for y in range(0,218):
     for z in range(0,182):
       model = LinearRegression().fit(img_data[:,x,y,z].reshape(-1,1), np.array(age))
