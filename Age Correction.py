@@ -34,4 +34,12 @@ for x in range(0,182):
     for z in range(0,182):
       model = LinearRegression().fit(img_data[:,x,y,z].reshape(-1,1), np.array(age))
       w[x,y,z] = model.coef_                                  
-  np.save("weights.npy",w) 
+ 
+data2 = pd.read_csv("ADNI1.csv")
+ndata = data[:,2:4]
+for sub,age in ndata:
+  img = nib.load(sub+".nii")
+  img_data = img.get_data()
+  img_data = weights*(75-age)+img_data
+  fimg = nib.Nifti1Image(img_data, img.affine,img.header)
+  nib.save(fimg,sub+".nii")
