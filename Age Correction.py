@@ -32,6 +32,6 @@ w = np.empty([180,218,182])
 for x in range(0,180):
   for y in range(0,218):
     for z in range(0,182):
-      model = LinearRegression().fit(img_data[:,0,y,z].reshape(-1,1), np.array(age))
+      model = LinearRegression().fit(img_data[:,x,y,z].reshape(-1,1), np.array(age))
       w[x,y,z] = model.coef_                                  
   np.save("weights.npy",w) 
