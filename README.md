@@ -16,6 +16,6 @@ Feature Selection Model was Based on <br/>
 4. Create 151 Patches required for CNN.
 5. Generate 1024 features from each patch.
 6. Use the 1024*151 features in Feature Selection Model.
-7. Check the accuracy in Extreme Learning Machine(RBF) Classifier
+7. Check the accuracy in Extreme Learning Machine(RBF) Classifier.
 
 
