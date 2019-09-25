@@ -16,4 +16,4 @@ ADNI1. Dataset include 188 AD, 229 NC, and 401 MCI subjects.
 6. Use the 1024*151 features in Feature Selection Model.
 7. Check the accuracy in Extreme Learning Machine(RBF) Classifier.
 
-For details Please go through the pdf.
+###For details Please go through the pdf in the repository.
